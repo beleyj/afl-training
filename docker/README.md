@@ -37,7 +37,7 @@ EC2
 
 First create a VPC with a public subnet, and a security group for this VPC has open inbound ports from 30500-305NN, SSH (22), and Docker (2376). If using the SSM password method, create an instance profile for the host with appropriate permissions.
 
-Create a hulking EC2 instance (~$4/hour), e.g.:
+Create a m5.xlarge gives a student 4 cores & 16gb RAM for ~$0.2/hour. On GCP n2-standard-4 is the equivalent.
 
         $ export REGION=<?> VPC=<?> SG=<?> PROFILE=<?>
         $ docker-machine create --driver amazonec2 --amazonec2-region $REGION --amazonec2-vpc-id $VPC --amazonec2-security-group $SG --amazonec2-iam-instance-profile=$PROFILE --amazonec2-instance-type m5a.24xlarge trainingaws
