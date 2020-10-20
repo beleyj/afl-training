@@ -39,7 +39,7 @@ int main() {
 
   BIO_write(sinbio, data, size);
   #ifdef __AFL_HAVE_MANUAL_CONTROL
-  __AFL_INIT();
+    __AFL_INIT();
   #endif
 
   uint8_t data[100] = {0};
